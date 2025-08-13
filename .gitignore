@@ -1,0 +1,233 @@
+# XAUUSD Market Structure Detection - .gitignore
+
+# Python
+_pycache_/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project-specific data directories
+data/raw/*.csv
+data/clean/*.csv
+data/resampled/*.csv
+!data/raw/.gitkeep
+!data/clean/.gitkeep
+!data/resampled/.gitkeep
+
+# Outputs
+outputs/events/*.csv
+outputs/events/*.json
+outputs/*.json
+outputs/*.png
+outputs/*.html
+!outputs/.gitkeep
+!outputs/events/.gitkeep
+
+# Logs
+logs/*.log
+logs/*.json
+logs/*.txt
+!logs/.gitkeep
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Backup files
+*.bak
+*.backup
+
+# Configuration overrides
+config_local.yaml
+.env.local
+.env.production
+
+# Market data files
+*.mt4
+*.mt5
+*.tick
+*.bin
+
+# Large model files
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+
+# Streamlit
+.streamlit/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Terraform
+*.tfstate
+.tfstate.
+.terraform/
+
+# AWS
+.aws/
+
+# Jupyter Lab
+.jupyter/
+
+# PyTorch
+*.pth
+*.pt
+
+# TensorFlow
+*.pb
+checkpoint
+.ckpt
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Weights & Biases
+wandb/
+
+# DVC
+.dvc/
+*.dvc
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Profiling
+*.prof
+*.profile
+
+# Memory profiling
+*.mprof
+
+# Time profiling
+*.time
+
+# Custom exclusions for this project
+notebooks/*.html
+notebooks/*.pdf
+test_data/
+sample_data/
+archived/
+old/

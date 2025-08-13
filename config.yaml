@@ -1,0 +1,88 @@
+# XAUUSD Market Structure Detection Configuration
+# Generated: 2025-08-13
+
+# Data Processing Settings
+data:
+  timezone: "UTC"
+  base_timeframe: "15min"
+  resampled_timeframes: ["1H", "4H", "1D"]
+  
+  # File paths
+  raw_data_path: "data/raw/"
+  clean_data_path: "data/clean/"
+  resampled_data_path: "data/resampled/"
+  
+  # Data validation
+  drop_duplicates: true
+  fill_missing: "forward"  # forward, backward, interpolate, drop
+  validate_ohlc: true  # Ensure High >= max(Open, Close) and Low <= min(Open, Close)
+
+# Market Structure Rules
+rules:
+  # Candle color classification
+  candle_color_rule:
+    red: "close < open"    # Strict inequality
+    green: "close > open"  # Strict inequality
+    doji: "close == open"  # Neutral candles
+  
+  # Optional noise filtering
+  min_body_pct: 0.0  # Minimum body size as % of candle range (0.0 = disabled)
+  
+  # Confirmation patterns
+  two_candle_confirmation: true
+  engulfing_4h_plus: true  # Only for 4H+ timeframes
+  
+  # CHoCH settings
+  choch_consecutive_candles: 2
+  internal_choch_threshold: 3  # Number of same-direction swings to trigger
+
+# Event Detection Settings
+detection:
+  # Timestamp settings
+  event_timestamp_source: "candle_index"  # candle_index or trigger_index
+  include_trigger_info: true
+  
+  # Event types to detect
+  detect_hh: true
+  detect_hl: true
+  detect_ll: true
+  detect_lh: true
+  detect_choch: true
+  detect_internal_choch: true
+
+# Output Settings
+output:
+  events_path: "outputs/events/"
+  logs_path: "logs/"
+  export_formats: ["csv", "json"]
+  
+  # CSV column order
+  csv_columns: 
+    - "id"
+    - "datetime"
+    - "timeframe"
+    - "event_type"
+    - "price"
+    - "trigger_index"
+    - "trigger_rule"
+    - "notes"
+    - "source_file"
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_logging: true
+  console_logging: true
+
+# Visualization Settings (for future phases)
+visualization:
+  default_chart_height: 600
+  default_chart_width: 1200
+  marker_styles:
+    HH: {"symbol": "triangle-up", "color": "teal", "size": 10}
+    HL: {"symbol": "circle", "color": "green", "size": 8}
+    LL: {"symbol": "triangle-down", "color": "red", "size": 10}
+    LH: {"symbol": "circle", "color": "orange", "size": 8}
+    CHOCH: {"symbol": "diamond", "color": "purple", "size": 12}
+    INTERNAL_CHOCH: {"symbol": "diamond-open", "color": "purple", "size": 12}
