@@ -1,0 +1,47 @@
+{
+  "session_info": {
+    "session_id": "phase2_15min_181713",
+    "timestamp": "20250813_181713",
+    "phase": "Phase 2 - Core Detection Engine"
+  },
+  "performance_metrics": {
+    "processing_time_seconds": 1030.2418065071106,
+    "candles_processed": 148080,
+    "candles_per_second": 143.73324695689095,
+    "events_detected": 80026,
+    "events_per_1000_candles": 540.4240950837386,
+    "detection_efficiency": 77.67690992012531
+  },
+  "event_statistics": {
+    "HH": 9934,
+    "HL": 4361,
+    "LL": 9932,
+    "LH": 3927,
+    "CHOCH_UP_DOWN": 23413,
+    "CHOCH_DOWN_UP": 27273,
+    "INTERNAL_CHOCH_UP_DOWN": 1186,
+    "INTERNAL_CHOCH_DOWN_UP": 0
+  },
+  "price_analysis": {
+    "min_event_price": 1266.386,
+    "max_event_price": 3500.2,
+    "price_range": 2233.814,
+    "avg_event_price": 1999.0826658460956
+  },
+  "sequence_analysis": {
+    "total_events": 80026,
+    "patterns": {
+      "hh_hl_sequences": 1209,
+      "ll_lh_sequences": 982,
+      "choch_after_swings": 50686,
+      "internal_choch_count": 1186
+    },
+    "interval_statistics": {
+      "avg_interval": 1.8503842549203373,
+      "min_interval": 0,
+      "max_interval": 43
+    },
+    "first_event_candle": 1,
+    "last_event_candle": 148078
+  }
+}
